@@ -28,6 +28,8 @@ class L1RCTParameters {
  public:
 
   // constructor
+  L1RCTParameters() {}
+
   L1RCTParameters(double eGammaLSB,
 		  double jetMETLSB,
 		  double eMinForFGCut,
@@ -38,6 +40,9 @@ class L1RCTParameters {
 		  double eActivityCut,
 		  double hActivityCut,
 		  double eicIsolationThreshold,
+		  bool ignoreTowerHB,
+		  bool ignoreTowerHEplus,
+		  bool ignoreTowerHEminus,
 		  std::vector<double> eGammaECalScaleFactors,
 		  std::vector<double> eGammaHCalScaleFactors,
 		  std::vector<double> jetMETECalScaleFactors,
@@ -59,6 +64,9 @@ class L1RCTParameters {
   double eActivityCut() const {return eActivityCut_;}
   double hActivityCut() const {return hActivityCut_;}
   double eicIsolationThreshold() const {return eicIsolationThreshold_;}
+  bool ignoreTowerHB() const {return ignoreTowerHB_;}
+  bool ignoreTowerHEplus() const {return ignoreTowerHEplus_;}
+  bool ignoreTowerHEminus() const {return ignoreTowerHEminus_;}
   std::vector<double> eGammaECalScaleFactors() const {return eGammaECalScaleFactors_;}
   std::vector<double> eGammaHCalScaleFactors() const {return eGammaHCalScaleFactors_;}
   std::vector<double> jetMETECalScaleFactors() const {return jetMETECalScaleFactors_;}
@@ -80,7 +88,7 @@ class L1RCTParameters {
 
   // default constructor is not implemented
 
-  L1RCTParameters();
+  //L1RCTParameters();
 
   // LSB of the eGamma object corresponds to this ET (in GeV)
 
@@ -128,6 +136,22 @@ class L1RCTParameters {
   // the electron candidate is isolated.
 
   double eicIsolationThreshold_;
+
+  // Ignores HCAL barrel energy if no ECAL energy in corresponding
+  // tower -- to reduce HCAL noise.  Endcaps enabled separately
+  // to allow for lack of one/both ECAL endcaps.
+
+  bool ignoreTowerHB_;
+
+  // Ignores HCAL energy in plus endcap if no ECAL energy in
+  // corresponding tower.  
+
+  bool ignoreTowerHEplus_;
+
+  // Ignores HCAL energy in minus endcap if no ECAL energy in
+  // corresponding tower.
+
+  bool ignoreTowerHEminus_;
 
   // eGamma object ET is computed using the trigger tower ET defined as
   // ecal * eGammaECalScaleFactors[iEta] + hcal * eGammaHCalScaleFactors[iEta]
