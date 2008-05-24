@@ -2,7 +2,6 @@
 #define L1TObjects_L1MuCSCTFConfiguration_h
 
 #include <string>
-#include <FWCore/ParameterSet/interface/ParameterSet.h>
 
 class CSCTFConfigProducer;
 
@@ -15,8 +14,6 @@ public:
 	const std::string& parameters(void) const throw() {
 		return parametersAsText;
 	}
-
-	edm::ParameterSet parse(void) const ;
 
 	L1MuCSCTFConfiguration& operator=(const L1MuCSCTFConfiguration& conf){
 		parametersAsText = conf.parametersAsText;
