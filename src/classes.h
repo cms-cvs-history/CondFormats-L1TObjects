@@ -8,6 +8,7 @@
 #include "CondFormats/L1TObjects/interface/L1GctJetCounterSetup.h"
 #include "CondFormats/L1TObjects/interface/L1GctJetEtCalibrationFunction.h"
 #include "CondFormats/L1TObjects/interface/L1GctJetFinderParams.h"
+#include "CondFormats/L1TObjects/interface/L1GctHfLutSetup.h"
 #include "CondFormats/L1TObjects/interface/L1MuDTExtLut.h"
 #include "CondFormats/L1TObjects/interface/L1MuDTPhiLut.h"
 #include "CondFormats/L1TObjects/interface/L1MuDTPtaLut.h"
@@ -41,6 +42,8 @@
 namespace {
   namespace {
     std::map< std::string, std::map< std::string, std::string > > dummy0 ;
+    std::pair< std::string, std::map< std::string, std::string > > dummy0a ;
+    std::pair< std::string, std::string > dummy0b ;
     std::vector<L1MuDTExtLut::LUT> dummy3 ;
     std::vector<L1GtMuonTemplate> dummy4 ;
     std::vector<L1GtCaloTemplate> dummy5 ;
@@ -48,6 +51,11 @@ namespace {
     std::vector<L1GtJetCountsTemplate> dummy7 ;
     std::vector<L1GtCorrelationTemplate> dummy8 ;
     std::vector<L1GtCastorTemplate> dummy8a ;
+    //    std::vector<L1GtHfBitCountsTemplate> dummy8b ;
+    //    std::vector<L1GtHfRingEtSumsTemplate> dummy8c ;
     std::map< std::string, L1GtAlgorithm > dummy9 ;
+    std::pair<L1GctHfLutSetup::hfLutType,std::vector<uint16_t> > dummy10 ;
+    std::pair<short,L1MuDTEtaPattern> dummy11 ;
+    std::pair<std::pair<short,short>,std::pair<short,std::vector<short> > > dummy12 ;
   }
 }
