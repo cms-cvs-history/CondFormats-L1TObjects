@@ -21,7 +21,6 @@
 
 #include <vector>
 #include <ostream>
-#include <stdint.h>
 
 class L1CaloEcalScale {
 
